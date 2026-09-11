@@ -6,3 +6,5 @@
 - [ ] Replace the temporary brand badge with the supplied circular 3D logo in desktop/mobile headers and footer, and derive its favicon — blocked because the logo attachment is not present in project uploads.
 - [x] Apply the approved Chocolate & Cream visual correction across all four pages without changing menu data or functionality.
 - [x] Verify desktop, tablet, and mobile layouts; scan for forbidden reference and catering content.
+- [ ] Replace generic menu imagery with a unique, dish-specific image assignment for every official menu entry and homepage signature/special card.
+- [ ] Audit image relevance, duplicate assignments, card cropping, and responsive menu presentation without changing menu data or functionality.
