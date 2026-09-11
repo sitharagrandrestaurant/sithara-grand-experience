@@ -1,0 +1,3 @@
+import { useEffect, useState } from "react";
+function getStatus() { const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date()); const hour=Number(parts.find(p=>p.type==="hour")?.value ?? 0); const minute=Number(parts.find(p=>p.type==="minute")?.value ?? 0); const total=hour*60+minute; return total>=720 && total<1410; }
+export function OpenStatus() { const [open,setOpen]=useState(getStatus); useEffect(()=>{ const timer=window.setInterval(()=>setOpen(getStatus()),60000); return()=>window.clearInterval(timer)},[]); return <span className={open ? "status-open" : "status-closed"}><i aria-hidden="true" />{open ? "OPEN NOW" : "CLOSED NOW"}</span>; }
