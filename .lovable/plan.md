@@ -1,19 +1,21 @@
-# Sithara Grand visual correction
+# Dish-specific menu imagery
 
 ## Goal
-Refine the existing site without changing its routes, menu data, prices, links, hours, or working behavior.
+Replace the current four-image fallback system with distinct, relevant food photography for every official menu entry while preserving all names, categories, prices, links, routes, and layout.
 
-## Visual changes
-- Use the selected Chocolate & Cream palette: deep chocolate header/hero/footer, warm cream content, and restrained orange-gold accents.
-- Replace oversized display type with Instrument Serif headings and Work Sans body text, using compact responsive scales.
-- Preserve the cinematic food hero while reducing its height and headline footprint; keep the floating hours/location panel and compact calls to action.
-- Rebuild the page rhythm into full-width alternating bands: light standards and signatures, dark Grand Specials, cinematic biryani, light story/gallery/contact, dark footer.
-- Reduce card dimensions, image ratios, labels, prices, shadows, and gaps; use four signature/menu cards on large screens, two on tablets, and one or two on phones.
-- Restyle menu search, dietary controls, category tabs, story/value panels, contact cards, and location panels for the cream theme.
-- Keep motion restrained with subtle lift, image zoom, and reveal transitions; respect reduced-motion preferences.
+## Implementation
+- Keep the PDF-derived menu rows unchanged and add an explicit image reference to every row.
+- Create a cohesive set of original, realistic food photographs in warm premium restaurant lighting, organized in small category-based batches so each resulting asset corresponds to one exact dish.
+- Use exact dish characteristics in the image prompts: protein, preparation, sauce, bread/rice style, drink flavor, dessert, portion style, and pot/family-pack presentation.
+- Update menu cards and homepage signature/special cards to read the item-specific image reference directly.
+- Preserve the current fixed media ratio, `object-fit: cover`, lazy loading, alt text, pricing, filtering, and item-specific WhatsApp behavior.
 
-## Responsive and quality checks
-- Verify Home, Menu, About, and Contact at desktop, tablet, and mobile widths.
-- Check hero sizing, card consistency, image cropping, navigation, buttons, footer, text wrapping, and horizontal overflow.
-- Scan shipped source for forbidden reference and catering content.
-- Keep the temporary brand mark until the requested circular logo file is supplied; do not invent or redraw it.
+## Audit and verification
+- Add an automated audit covering all menu rows: every item must have an image, every image assignment must be unique, and the mapping must retain the unchanged item count, names, categories, and prices.
+- Visually inspect representative items from every category plus all homepage signature/special cards on desktop and mobile.
+- Confirm there are no broken or empty images, distorted crops, duplicate image references, layout regressions, or changes to existing functionality.
+
+## Technical details
+- Store generated assets locally rather than hotlinking third-party images.
+- Use compact image batches/contact sheets only as a generation step; export each dish into its own optimized local file with a stable filename derived from its existing menu ID.
+- Keep the current application architecture and component boundaries intact; only the menu image data and image rendering source change.
