@@ -1,7 +1,7 @@
 # Sithara Grand premium restaurant website
 
 ## Outcome
-Build an original, responsive Sithara Grand Family Restaurant website using the supplied Deccan Grill website as the primary visual and UX reference. Match its premium quality, section rhythm, spacing, cinematic food-led presentation, dark atmosphere, amber/gold emphasis, typography hierarchy, glass panels, card styling, restrained depth, and motion language as closely as possible—without copying its branding, logo, text, restaurant information, imagery, menu, source code, or proprietary assets.
+Build an original, responsive Sithara Grand Family Restaurant website using the supplied Deccan Grill website as the primary visual and UX reference. The finished site must clearly feel from the same premium design family and level of sophistication—not like a generic restaurant template. Match its section rhythm, spacing, cinematic food-led presentation, black/deep-charcoal atmosphere, amber/gold emphasis, typography hierarchy, hero and navigation composition, glass panels, food-card styling, restrained depth, image treatment, button interactions, storytelling cadence, and motion language as closely as possible—without copying its branding, logo, text, restaurant information, imagery, menu, source code, or proprietary assets.
 
 ## Pages and structure
 - Add a persistent glassy header and premium footer shared across the site.
@@ -13,6 +13,7 @@ Build an original, responsive Sithara Grand Family Restaurant website using the 
 
 ## Brand and visual system
 - Use the user-supplied circular 3D Sithara Grand logo unchanged as the authoritative brand mark. Preserve its embossed gold/bronze finish, deep maroon/burgundy accents, proportions, and legibility at small header sizes; use its supplied clean white version on light surfaces when appropriate.
+- Do not redraw, simplify, recolor, restyle, or reinterpret the supplied logo; only create responsive size treatments and a faithful favicon crop from that identity.
 - Derive a favicon from the same supplied circular logo identity without redesigning it.
 - Do not start final logo integration until the logo files are uploaded; the menu PDF does not contain the requested new logo asset.
 - Define a near-black, deep warm-brown, gold, amber, bronze, restrained maroon/burgundy, cream, and warm-gray token system with subtle warm glows. Burgundy remains a supporting brand accent, not the dominant page color.
@@ -48,3 +49,4 @@ Build an original, responsive Sithara Grand Family Restaurant website using the 
 - Confirm phone links use `tel:+919121577737`, email links use `mailto:sitaragrandpdrl@gmail.com`, WhatsApp links use `919121577737`, and directions use the exact Sithara address without invented coordinates.
 - Confirm images load, performance remains smooth, no console/runtime/build errors remain, and no horizontal overflow exists at phone, tablet, laptop, and 1920px widths.
 - Search the entire project and remove every occurrence or asset related to Deccan, Plano, Texas, Catering, USD, Uber Eats, DoorDash, old phone/address details, and reference-site imagery. The only permitted appearance of those terms during implementation is in private planning/reference notes, never shipped application code or content.
+- Confirm there is no catering page, route, navigation item, button, call-to-action, component, text, data, or hidden functionality anywhere in the shipped application.
