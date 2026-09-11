@@ -1,5 +1,6 @@
 # Roadmap
 
-- [x] Refine the implementation plan with the user's non-negotiable reference, logo, menu, content-removal, and validation requirements.
-- [x] Lock the final design-family fidelity, unchanged-logo, PDF-only menu, and zero-catering requirements into the plan.
-- [ ] Await the circular 3D Sithara Grand logo upload before implementation.
+- [x] Refine and approve the visual, content, menu, and zero-catering requirements.
+- [x] Build the four-page cinematic restaurant website and complete PDF-based menu.
+- [x] Add functional phone, email, WhatsApp, directions, live hours, metadata, and mobile layouts.
+- [ ] Replace the temporary brand badge with the supplied circular 3D logo and derive its favicon — blocked until the logo file is uploaded.
