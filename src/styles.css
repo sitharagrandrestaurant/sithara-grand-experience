@@ -72,6 +72,7 @@
 .font-display { font-family: var(--font-display); }
 
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; border-bottom: 1px solid var(--dark-border); background: color-mix(in oklab, var(--brand-deep) 91%, transparent); color: var(--warm-white); backdrop-filter: blur(18px); }
+.site-header, .hero, .page-hero, .section-specials, .biryani-experience, .image-story, footer { --background: var(--brand-deep); --foreground: var(--warm-white); --muted-foreground: var(--warm-muted); --border: var(--dark-border); }
 .site-header .site-container { height: 72px; }
 .nav-link { position: relative; padding-block: 26px; color: var(--warm-muted); font-size: .68rem; font-weight: 600; text-transform: uppercase; transition: color .25s; }
 .nav-link:hover, .nav-link-active { color: var(--warm-white); }
