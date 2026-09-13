@@ -9,3 +9,4 @@
 - [ ] Replace generic menu imagery with a unique, dish-specific image assignment for every official menu entry and homepage signature/special card.
 - [ ] Audit image relevance, duplicate assignments, card cropping, and responsive menu presentation without changing menu data or functionality.
 - [x] Stop all AI image generation until the user explicitly authorizes it again; preserve every completed image unchanged and use existing placeholders for unfinished items.
+- [x] Refine only the Home hero with a transparent left-weighted cinematic overlay and subtle edge vignette.
