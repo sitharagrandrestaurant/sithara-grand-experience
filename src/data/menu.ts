@@ -1,5 +1,7 @@
+import { imageFileForMenuItem } from "@/data/menu-images";
+
 export type Dietary = "veg" | "nonVeg" | "egg" | "neutral";
-export type MenuItem = { id: string; name: string; category: string; price: number; dietary: Dietary; imageKey: "biryani" | "signature" | "seafood" | "dessert" };
+export type MenuItem = { id: string; name: string; category: string; price: number; dietary: Dietary; imageKey: "biryani" | "signature" | "seafood" | "dessert"; imageFile?: string };
 const rows: Array<[string, Dietary, string, number][]> = [
 [["VEG SOUPS","veg","TOMATO SOUP",80],["VEG SOUPS","veg","VEG CORN SOUP",80],["VEG SOUPS","veg","VEG HOT & SOUR SOUP",90],["VEG SOUPS","veg","VEG SWEET CORN SOUP",99],["VEG SOUPS","veg","LEMON CORIENDER SOUP",120],["VEG SOUPS","veg","VEG MANCHOW SOUP",120]],
 [["NON VEG SOUPS","nonVeg","CHICKEN CORN SOUP",150],["NON VEG SOUPS","nonVeg","CHICKEN HOT & SOUR SOUP",160],["NON VEG SOUPS","nonVeg","CHICKEN MANCHOW SOUP",199],["NON VEG SOUPS","nonVeg","CHI LEMAN CORIENDER SOUP",160]],
@@ -25,6 +27,7 @@ const rows: Array<[string, Dietary, string, number][]> = [
 [["ICE CREAMS","veg","VANILLA",99],["ICE CREAMS","veg","CHOCOLATE",99],["ICE CREAMS","veg","BUTTER SCOTCH",99],["ICE CREAMS","veg","ALPHONSO MANGO",109],["ICE CREAMS","veg","SITA PHAL",129],["ICE CREAMS","veg","TENDER COCONUT",129],["ICE CREAMS","veg","RED VELVET",129],["ICE CREAMS","veg","AMERICAN DRY FRUIT",129]]
 ];
 const seafood = /FISH|PRAWN/; const biryani = /BIRIYANI|BIRYANI|RICE/; const dessert = /LASSI|MOJITO|JUICE|ICE|JAMUN|APRICOT|VANILLA|CHOCOLATE|MANGO|COCONUT|VELVET|DRY FRUIT|CURRENT|BERRY|KIWI|ORANGE/;
-export const menuItems: MenuItem[] = rows.flat().map(([category,dietary,name,price], index) => ({ id: `${index + 1}-${name.toLowerCase().replace(/[^a-z0-9]+/g,"-")}`, category, dietary, name, price, imageKey: dessert.test(`${category} ${name}`) ? "dessert" : seafood.test(name) ? "seafood" : biryani.test(`${category} ${name}`) ? "biryani" : "signature" }));
+export const menuItems: MenuItem[] = rows.flat().map(([category,dietary,name,price], index) => ({ id: `${index + 1}-${name.toLowerCase().replace(/[^a-z0-9]+/g,"-")}`, category, dietary, name, price, imageKey: dessert.test(`${category} ${name}`) ? "dessert" : seafood.test(name) ? "seafood" : biryani.test(`${category} ${name}`) ? "biryani" : "signature", imageFile: imageFileForMenuItem(name, index + 1) }));
+export const missingMenuImageItems = menuItems.filter((item) => !item.imageFile);
 export const menuCategories = [...new Set(menuItems.map((item) => item.category))];
 export const whatsappFor = (name?: string) => `https://wa.me/919121577737?text=${encodeURIComponent(name ? `Hello Sithara Grand, I would like to enquire about ${name}.` : "Hello Sithara Grand, I would like to enquire about your menu.")}`;

@@ -21,6 +21,7 @@ import interiorImage from "@/assets/sithara-interior.jpg";
 import biryaniImage from "@/assets/sithara-biryani.jpg";
 import seafoodImage from "@/assets/sithara-seafood.jpg";
 import dessertsImage from "@/assets/sithara-desserts.jpg";
+import logo from "@/assets/sithara-logo.png";
 
 const pick = (name: string) => {
   const item = menuItems.find((i) => i.name === name);
@@ -62,6 +63,13 @@ export function Home() {
         <div className="hero-scrim" />
         <div className="site-container hero-content">
           <div className="hero-copy">
+            <img
+              className="hero-logo"
+              src={logo}
+              alt="Sithara Grand Family Restaurant"
+              width={150}
+              height={150}
+            />
             <p className="hero-kicker">
               <Sparkles />
               SITHARA GRAND
