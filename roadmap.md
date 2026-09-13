@@ -8,3 +8,4 @@
 - [x] Verify desktop, tablet, and mobile layouts; scan for forbidden reference and catering content.
 - [ ] Replace generic menu imagery with a unique, dish-specific image assignment for every official menu entry and homepage signature/special card.
 - [ ] Audit image relevance, duplicate assignments, card cropping, and responsive menu presentation without changing menu data or functionality.
+- [x] Stop all AI image generation until the user explicitly authorizes it again; preserve every completed image unchanged and use existing placeholders for unfinished items.
