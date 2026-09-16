@@ -104,6 +104,7 @@
 .hero-info { position: absolute; right: 0; bottom: 54px; width: 292px; border: 1px solid var(--dark-border); background: color-mix(in oklab, var(--brand-deep) 76%, transparent); padding: 20px; backdrop-filter: blur(18px); box-shadow: 0 20px 50px color-mix(in oklab, var(--brand-deep) 42%, transparent); }
 .hero-info > div { display: flex; gap: 13px; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--dark-border); font-size: .76rem; }
 .hero-info svg { width: 17px; color: var(--primary); }
+.hero-info a { color: inherit; }
 .hero-info small { display: block; margin-bottom: 3px; color: var(--warm-muted); }
 .scroll-cue { position: absolute; bottom: 24px; left: 50%; display: flex; align-items: center; gap: 8px; color: var(--warm-muted); font-size: .56rem; letter-spacing: .18em; transform: translateX(-50%); }
 .scroll-cue svg { width: 13px; }

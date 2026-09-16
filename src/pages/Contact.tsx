@@ -3,8 +3,7 @@ import { Button } from "@/components/button";
 import { OpenStatus } from "@/components/open-status";
 import { whatsappFor } from "@/data/menu";
 
-const maps =
-  "https://www.google.com/maps/search/?api=1&query=Sithara%20Grand%20Family%20Restaurant%2C%20Near%20By%20Pass%20Junction%2C%20Piduguralla%20-%20522413";
+const maps = "https://maps.app.goo.gl/Q3dqkMmWtkjeWKsv7?g_st=aw";
 
 export function Contact() {
   return (

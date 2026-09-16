@@ -58,17 +58,6 @@ export function MenuPage() {
                 placeholder="Search dishes…"
               />
             </label>
-            <div className="diet-filters" aria-label="Dietary filter">
-              {(["all", "veg", "nonVeg", "egg"] as const).map((d) => (
-                <button
-                  key={d}
-                  className={diet === d ? "filter-active" : ""}
-                  onClick={() => setDiet(d)}
-                >
-                  {d === "all" ? "All" : d === "nonVeg" ? "Non-veg" : d === "egg" ? "Egg" : "Veg"}
-                </button>
-              ))}
-            </div>
           </div>
           <div className="category-tabs" aria-label="Menu categories">
             <button

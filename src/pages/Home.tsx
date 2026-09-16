@@ -110,9 +110,13 @@ export function Home() {
             </div>
             <div>
               <MapPin />
-              <span>
+              <a
+                href="https://maps.app.goo.gl/Q3dqkMmWtkjeWKsv7?g_st=aw"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <small>Find us</small>Near By Pass Junction, Piduguralla
-              </span>
+              </a>
             </div>
           </aside>
         </div>
@@ -299,7 +303,7 @@ export function Home() {
             <OpenStatus />
             <Button asChild>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Sithara%20Grand%20Family%20Restaurant%2C%20Near%20By%20Pass%20Junction%2C%20Piduguralla%20-%20522413"
+                href="https://maps.app.goo.gl/Q3dqkMmWtkjeWKsv7?g_st=aw"
                 target="_blank"
                 rel="noreferrer"
               >
