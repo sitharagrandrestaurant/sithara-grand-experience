@@ -15,12 +15,14 @@ import { Button } from "@/components/button";
 import { OpenStatus } from "@/components/open-status";
 import { SectionHeading } from "@/components/section";
 import { MiniMenuCard } from "@/components/mini-menu-card";
+import { ComboCard } from "@/components/combo-card";
+import { combos } from "@/data/combos";
 import { menuItems, whatsappFor } from "@/data/menu";
-import heroImage from "@/assets/sithara-hero.jpg";
-import interiorImage from "@/assets/sithara-interior.jpg";
-import biryaniImage from "@/assets/sithara-biryani.jpg";
-import seafoodImage from "@/assets/sithara-seafood.jpg";
-import dessertsImage from "@/assets/sithara-desserts.jpg";
+import heroImage from "@/assets/SITARA GRAND SPL BIRIYANI.jpg";
+import interiorImage from "@/assets/FAMILY PACK CHICKEN DUM BIRIYANI.jpg";
+import biryaniImage from "@/assets/VEG BIRIYANI.jpg";
+import seafoodImage from "@/assets/PRAWNS CURRY.jpg";
+import dessertsImage from "@/assets/POT MANGO LASSI.jpg";
 import logo from "@/assets/sithara-logo.png";
 
 const pick = (name: string) => {
@@ -178,6 +180,19 @@ export function Home() {
             {specials.map((item) => (
               <MiniMenuCard key={item.id} item={item} featured />
             ))}
+          </div>
+        </div>
+      </section>
+      <section id="combos" className="combos-section">
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Specially curated combo meals"
+            title={<><em>COMBOS</em></>}
+            copy="Thoughtfully paired favourites for memorable tables and easy ordering."
+            align="center"
+          />
+          <div className="combos-grid">
+            {combos.map((combo) => <ComboCard key={combo.id} combo={combo} />)}
           </div>
         </div>
       </section>

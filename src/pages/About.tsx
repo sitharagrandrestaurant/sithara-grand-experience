@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Heart, Sparkles, Users, UtensilsCrossed } from "lucide-react";
 import { Button } from "@/components/button";
 import { SectionHeading } from "@/components/section";
-import interiorImage from "@/assets/sithara-interior.jpg";
-import signatureImage from "@/assets/sithara-signatures.jpg";
+import interiorImage from "@/assets/FAMILY PACK CHICKEN DUM BIRIYANI.jpg";
+import signatureImage from "@/assets/SITARA GRAND SPL BIRIYANI.jpg";
 
 const values = [
   {

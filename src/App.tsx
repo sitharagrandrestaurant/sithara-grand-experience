@@ -7,24 +7,27 @@ import { MenuPage } from "@/pages/Menu";
 import { About } from "@/pages/About";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
+import { CartProvider } from "@/context/cart-context";
 
 const queryClient = new QueryClient();
 
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <ScrollToTop />
-        <SiteShell>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/menu" element={<MenuPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </SiteShell>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <SiteShell>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/menu" element={<MenuPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </SiteShell>
+        </BrowserRouter>
+      </CartProvider>
     </QueryClientProvider>
   );
 }

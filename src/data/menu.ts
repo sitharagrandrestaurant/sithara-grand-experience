@@ -30,4 +30,5 @@ const seafood = /FISH|PRAWN/; const biryani = /BIRIYANI|BIRYANI|RICE/; const des
 export const menuItems: MenuItem[] = rows.flat().map(([category,dietary,name,price], index) => ({ id: `${index + 1}-${name.toLowerCase().replace(/[^a-z0-9]+/g,"-")}`, category, dietary, name, price, imageKey: dessert.test(`${category} ${name}`) ? "dessert" : seafood.test(name) ? "seafood" : biryani.test(`${category} ${name}`) ? "biryani" : "signature", imageFile: imageFileForMenuItem(name, index + 1) }));
 export const missingMenuImageItems = menuItems.filter((item) => !item.imageFile);
 export const menuCategories = [...new Set(menuItems.map((item) => item.category))];
-export const whatsappFor = (name?: string) => `https://wa.me/919121577737?text=${encodeURIComponent(name ? `Hello Sithara Grand, I would like to enquire about ${name}.` : "Hello Sithara Grand, I would like to enquire about your menu.")}`;
+export const whatsappUrlForMessage = (message: string) => `https://wa.me/919121577737?text=${encodeURIComponent(message)}`;
+export const whatsappFor = (name?: string) => whatsappUrlForMessage(name ? `Hello Sithara Grand, I would like to enquire about ${name}.` : "Hello Sithara Grand, I would like to enquire about your menu.");

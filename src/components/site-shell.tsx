@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import { Menu, Phone, X, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { Menu, Phone, X, MessageCircle, Mail, MapPin, Clock, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { BrandMark } from "./brand-mark";
 import { Button } from "./button";
 import { OpenStatus } from "./open-status";
 import { whatsappFor } from "@/data/menu";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/context/cart-context";
+import { CartDrawer } from "@/components/cart-drawer";
 
 const navLinks = (
   <>
@@ -15,6 +17,7 @@ const navLinks = (
     <NavLink to="/menu" className={({ isActive }) => cn("nav-link", isActive && "nav-link-active")}>
       Menu
     </NavLink>
+    <a href="/#combos" className="nav-link">Combos</a>
     <NavLink
       to="/about"
       className={({ isActive }) => cn("nav-link", isActive && "nav-link-active")}
@@ -32,6 +35,7 @@ const navLinks = (
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { totalItems, openCart } = useCart();
   return (
     <header className="site-header">
       <div className="site-container flex h-20 items-center justify-between">
@@ -41,13 +45,19 @@ export function Header() {
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navLinks}
         </nav>
-        <div className="hidden md:block">
-          <Button asChild size="sm">
-            <a href="tel:+919121577737">
-              <Phone className="size-4" />
-              Call now
-            </a>
-          </Button>
+        <div className="header-actions">
+          <button className="cart-trigger" type="button" onClick={openCart} aria-label={`Open cart with ${totalItems} item${totalItems === 1 ? "" : "s"}`}>
+            <ShoppingBag />
+            <span>Cart ({totalItems})</span>
+          </button>
+          <div className="hidden md:block">
+            <Button asChild size="sm">
+              <a href="tel:+919121577737">
+                <Phone className="size-4" />
+                Call now
+              </a>
+            </Button>
+          </div>
         </div>
         <Button
           variant="ghost"
@@ -68,6 +78,9 @@ export function Header() {
           <Link to="/menu" onClick={() => setOpen(false)} className="mobile-nav-link">
             Menu
           </Link>
+          <a href="/#combos" onClick={() => setOpen(false)} className="mobile-nav-link">
+            Combos
+          </a>
           <Link to="/about" onClick={() => setOpen(false)} className="mobile-nav-link">
             About
           </Link>
@@ -164,6 +177,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
+      <CartDrawer />
       <main>{children}</main>
       <Footer />
       <FloatingWhatsApp />
