@@ -3,12 +3,19 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (hash) {
+      const timeout = window.setTimeout(() => {
+        const target = document.getElementById(hash.slice(1));
+        if (target) window.scrollTo({ top: Math.max(0, target.offsetTop - 100), behavior: "smooth" });
+      }, 0);
+      return () => window.clearTimeout(timeout);
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   useEffect(() => {
     const handleScroll = () => setVisible(window.scrollY > 300);

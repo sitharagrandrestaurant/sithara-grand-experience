@@ -152,7 +152,7 @@
 .special-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 330px)); justify-content: center; gap: 20px; margin-top: 36px; }
 .section-specials .dish-card { border-color: var(--dark-border); background: #F7F1E7; color: var(--dark-text); box-shadow: 0 10px 24px color-mix(in oklab, var(--brand-deep) 26%, transparent); }
 .section-specials .dish-card-featured .dish-media { aspect-ratio: 4 / 3; }
-.combos-section { padding: 88px 0; background: var(--cream); color: var(--dark-text); }
+.combos-section { scroll-margin-top: 100px; padding: 88px 0; background: var(--cream); color: var(--dark-text); }
 .combos-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 36px; }
 .combo-card { overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: var(--ivory); box-shadow: 0 8px 26px color-mix(in oklab, var(--brand-deep) 8%, transparent); }
 .combo-image-wrap { position: relative; aspect-ratio: 4 / 2.25; overflow: hidden; }

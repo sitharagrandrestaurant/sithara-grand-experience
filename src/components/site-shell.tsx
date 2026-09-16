@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, Phone, X, MessageCircle, Mail, MapPin, Clock, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { BrandMark } from "./brand-mark";
@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { useCart } from "@/context/cart-context";
 import { CartDrawer } from "@/components/cart-drawer";
 
-const navLinks = (
+const navLinks = (onCombosClick: (event: React.MouseEvent<HTMLAnchorElement>) => void) => (
   <>
     <NavLink to="/" end className={({ isActive }) => cn("nav-link", isActive && "nav-link-active")}>
       Home
@@ -17,7 +17,7 @@ const navLinks = (
     <NavLink to="/menu" className={({ isActive }) => cn("nav-link", isActive && "nav-link-active")}>
       Menu
     </NavLink>
-    <a href="/#combos" className="nav-link">Combos</a>
+    <a href="/#combos" className="nav-link" onClick={onCombosClick}>Combos</a>
     <NavLink
       to="/about"
       className={({ isActive }) => cn("nav-link", isActive && "nav-link-active")}
@@ -36,6 +36,19 @@ const navLinks = (
 export function Header() {
   const [open, setOpen] = useState(false);
   const { totalItems, openCart } = useCart();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const goToCombos = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.history.pushState(null, "", "/#combos");
+      const target = document.getElementById("combos");
+      if (target) window.scrollTo({ top: Math.max(0, target.offsetTop - 100), behavior: "smooth" });
+    } else {
+      navigate("/#combos");
+    }
+  };
   return (
     <header className="site-header">
       <div className="site-container flex h-20 items-center justify-between">
@@ -43,7 +56,7 @@ export function Header() {
           <BrandMark />
         </Link>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
-          {navLinks}
+          {navLinks(goToCombos)}
         </nav>
         <div className="header-actions">
           <button className="cart-trigger" type="button" onClick={openCart} aria-label={`Open cart with ${totalItems} item${totalItems === 1 ? "" : "s"}`}>
@@ -78,7 +91,7 @@ export function Header() {
           <Link to="/menu" onClick={() => setOpen(false)} className="mobile-nav-link">
             Menu
           </Link>
-          <a href="/#combos" onClick={() => setOpen(false)} className="mobile-nav-link">
+          <a href="/#combos" onClick={goToCombos} className="mobile-nav-link">
             Combos
           </a>
           <Link to="/about" onClick={() => setOpen(false)} className="mobile-nav-link">
